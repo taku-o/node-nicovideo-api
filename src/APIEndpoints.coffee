@@ -21,6 +21,9 @@ module.exports =
             get
                 url : NicoURL.Video.GET_VIDEO_INFO + movieId
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
 
         ###*
         # @param {NicoSession} session
@@ -31,6 +34,9 @@ module.exports =
             get
                 url : NicoURL.Video.GETFLV + movieId
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
 
     live :
         ###*
@@ -41,6 +47,9 @@ module.exports =
             get
                 url : NicoURL.Live.GET_PLAYER_STATUS + liveId
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
 
     nsen :
         ###*
@@ -53,6 +62,9 @@ module.exports =
             get
                 url : NicoURL.Live.NSEN_REQUEST+"?v=#{liveId}&id=#{movieId}"
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
                 # form :
                 #     v : liveId
                 #     id : movieId
@@ -66,6 +78,9 @@ module.exports =
             get
                 url : NicoURL.Live.NSEN_REQUEST + "?v=#{liveId}&mode=cancel"
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
                 # form :
                 #     v : liveId
                 #     mode : "cancel"
@@ -79,6 +94,9 @@ module.exports =
             get
                 url : NicoURL.Live.NSEN_REQUEST + "?v=#{liveId}&mode=requesting"
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
                 # form :
                 #     v : liveId
                 #     mode : "requesting"
@@ -92,6 +110,9 @@ module.exports =
             get
                 url : NicoURL.Live.NSEN_GOOD + "?v=#{liveId}"
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
                 # form :
                 #     v : liveId
 
@@ -104,6 +125,9 @@ module.exports =
             get
                 url : NicoURL.Live.NSEN_SKIP + "?v=#{liveId}"
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
                 # form :
                 #     v: liveId
 
@@ -112,3 +136,6 @@ module.exports =
             get
                 url : NicoURL.User.INFO + "?__format=json&user_id=#{userId}"
                 jar : session.cookie
+                headers: {
+                    Cookie: session.sessionId
+                }
